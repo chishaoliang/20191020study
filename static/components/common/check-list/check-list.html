@@ -1,0 +1,21 @@
+<div class="check-list">
+    <div class="xzui-cells">
+        <div class="checkbox-cells xzui-cell" wx:for="{{items}}" wx:for-item="item" wx:for-index="index" wx:key="parent">
+            <checkbox-group bindchange="checkItem" data-parent=true data-index="{{index}}" data-id="{{item.id}}">
+                <label class="checkbox checkbox-bar check-list-item">
+                    <checkbox class="checkbox-input checkbox-cells_input" checked="{{item.checked}}" value="{{item.id}}"></checkbox>
+                    <span class="checkbox-title check-list-title checkbox-cells_title">{{item.title}}</span>
+                    <button wx:if="{{item.children&&togglebutton}}" class="black_l2 check-list-arrow" type="button" catchtap="toggle" data-index="{{index}}"><i class="xzicon-down xzui-arrow  {{(item.expand?' open':'')}}"></i></button>
+                </label>
+            </checkbox-group>
+            <view class="check-list-son" wx:if="{{item.children}}" hidden="{{!item.expand}}">
+                <checkbox-group bindchange="checkItem" data-index="{{index}}" data-id="{{item.id}}">
+                    <label class="checkbox check-list-sonItem" wx:for="{{item.children}}" wx:for-item="child" wx:for-index="chx" wx:key="child">
+                        <checkbox class="checkbox-input checkbox-cells_input" checked="{{child.checked}}" value="{{child.id}}"></checkbox>
+                        <span class="checkbox-title check-list-title checkbox-cells_title">{{child.title}}</span>
+                    </label>
+                </checkbox-group>
+            </view>
+        </div>
+    </div>
+</div>

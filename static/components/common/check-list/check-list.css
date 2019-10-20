@@ -1,0 +1,40 @@
+/* CSS Document */
+.check-list-son{
+	padding:8px 0 8px 24px;
+	border-top-width: 1px;
+	border-top-style: dashed;
+	margin-left:15px;
+	line-height: 36px;
+}
+.check-list-sonItem{
+	margin-right:24px;
+}
+.check-list-sonItem+.check-list-sonItem{
+	margin-left:0;
+}
+
+.check-list-item{
+	line-height: 44px;
+	position:relative;
+}
+.check-list-arrow{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width:44px;
+	line-height: 44px;
+	text-align: center;
+}
+.check-list-title{
+	font-size: 14px;
+	padding-left: 26px;
+}
+.check-list-title:after{
+	font-size: 10px;
+}
+.check-list-title:after, .check-list-title:before {
+    margin-top: -10px;
+	width:20px;
+	height:20px;
+	line-height: 20px;
+}
